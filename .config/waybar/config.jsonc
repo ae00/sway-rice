@@ -1,0 +1,10 @@
+{
+	"position": "bottom",
+	"height": 30,
+	"modules-left": [
+		"sway/workspaces"
+	],
+	"modules-center": [
+		"sway/window"
+	]
+}
