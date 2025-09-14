@@ -1,0 +1,33 @@
+* {
+	font-size:14px;
+}
+window#waybar {
+	background:#000000;
+	color:#ffffff;
+}
+button {
+	box-shadow:none;
+	border:0;
+	border-bottom:1px solid black;
+	border-radius:0;
+	color:#ffffff;
+}
+button:hover {
+	background:none;
+	box-shadow:none;
+	border-bottom:1px solid black;
+}
+#workspaces button:hover {
+	background:#000000;
+	border:0;
+	border-bottom:1px solid red;
+}
+#workspaces button {
+	color:#4f4f4f;
+	padding:0 3px;
+}
+#workspaces button.focused {
+	background:#000000;
+	color:#ffffff;
+	border-bottom:1px solid red;
+}
