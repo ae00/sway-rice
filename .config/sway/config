@@ -1,0 +1,202 @@
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+input * {
+    xkb_layout "se"
+}
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+# Home row direction keys, like vim
+# Your preferred terminal emulator
+set $term alacritty --config-file /home/master/.config/alacritty/alacritty-wayland.toml
+# Your preferred application launcher
+set $menu wmenu-run
+
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+#output * bg /home/master/.config/wallpaper/archlinux-red.png fill
+
+# Font size controls the titlebar size
+font pango:dejavu 10
+
+# Gaps
+gaps inner 30
+gaps outer 30
+gaps right 120
+
+# Borders
+hide_edge_borders smart
+default_border pixel 2
+default_floating_border pixel 4
+
+# Client colors
+include "/home/master/.cache/wal/colors-sway"
+
+client.focused 		$color0 $color0 #fc0707 $color7 $color1
+client.focused_inactive #000000 #1c1c1c #ffffff #000000 #000000
+client.urgent           #2f343a #900000 #ffffff #900000 #900000
+client.placeholder      $color1 #000000 #ffffff #000000 #0c0c0c
+client.unfocused	#000000 #000000 #ffffff #000000 #000000
+
+client.background       #ffffff
+
+### Key bindings
+# Start a terminal
+bindsym $mod+Return exec $term
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Rofi launcher
+set $rofi_cfg /home/master/.cache/wal/colors-rofi-dark.rasi
+bindsym $mod+d exec --no-startup-id rofi -config $rofi_cfg -show run -disable-history -auto-select
+bindsym $mod+u exec --no-startup-id rofi -config $rofi_cfg -show filebrowser -auto-select
+bindsym $mod+f exec --no-startup-id rofi -config $rofi_cfg -show window -auto-select
+bindsym $mod+c exec --no-startup-id rofi -config $rofi_cfg -show calc -disable-history
+
+# File explorer
+bindsym $mod+g exec --no-startup-id $term -o 'window.padding.x=0' -o 'window.padding.y=0' -e ranger
+
+# Floating windows
+for_window [app_id="org.pulseaudio.pavucontrol"] floating on
+for_window [class="KeePassXC"] floating on
+for_window [app_id="flameshot"] floating on
+
+# Flameshot
+bindsym $mod+p exec flameshot gui
+
+# Move window to bottom right
+bindsym $mod+i floating toggle; resize set 546 307; move position 1166 748; sticky toggle
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    bindsym $mod+Shift+r reload
+
+    # Exit sway (logs you out of your Wayland session)
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+#
+# Moving around:
+#
+    # Or use $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # Ditto, with arrow keys
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+#
+# Workspaces:
+#
+    # Switch to workspace
+    bindsym $mod+1 workspace number 1
+    bindsym $mod+2 workspace number 2
+    bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace number 4
+    bindsym $mod+5 workspace number 5
+    bindsym $mod+6 workspace number 6
+    bindsym $mod+7 workspace number 7
+    bindsym $mod+8 workspace number 8
+    bindsym $mod+9 workspace number 9
+    bindsym $mod+0 workspace number 10
+    # Move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4
+    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6
+    bindsym $mod+Shift+7 move container to workspace number 7
+    bindsym $mod+Shift+8 move container to workspace number 8
+    bindsym $mod+Shift+9 move container to workspace number 9
+    bindsym $mod+Shift+0 move container to workspace number 10
+    # Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+h splith
+    bindsym $mod+v splitv
+
+    # Switch the current container between different layout styles
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+Shift+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
+
+    # Move focus to the parent container
+    bindsym $mod+a focus parent
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+z move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+z scratchpad show
+#
+# Resizing containers:
+#
+mode "resize" {
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 20px
+    bindsym Down resize grow height 20px
+    bindsym Up resize shrink height 20px
+    bindsym Right resize grow width 20px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+#
+# Utilities:
+#
+    # Special keys to adjust volume via PulseAudio
+    bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+    bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+    # Special keys to adjust brightness via brightnessctl
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+    # Special key to take a screenshot with grim
+    bindsym Print exec flameshot gui
+
+include /etc/sway/config.d/*
+
+exec --no-startup-id swaybg -i /home/master/.config/wallpaper/archlinux-red.png;
+exec --no-startup-id conky -c /home/master/.config/conky/conky-right-wayland;
+exec --no-startup-id conky -c /home/master/.config/conky/rss-wayland;
+exec --no-startup-id waybar -c /home/master/.config/waybar/config.jsonc;
