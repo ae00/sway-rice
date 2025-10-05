@@ -4,3 +4,4 @@ Sway backup files
 - pywal
 - waybar
 - alacritty
+- conky
