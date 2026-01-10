@@ -8,3 +8,10 @@ config.bind('<Ctrl+Shift+s>', 'hint links spawn streamlink -p mpv {hint-url} bes
 config.set("fileselect.handler", "external")
 config.set("fileselect.single_file.command", ["alacritty", "-e", "ranger", "--choosefile={}"])
 config.set("fileselect.multiple_files.command", ["alacritty", "-e", "ranger", "--choosefile={}"])
+
+c.url.searchengines = {
+    'DEFAULT': 'https://duckduckgo.com/?q={}',
+    'o': 'https://chat.openai.com/?q={}',
+    'r': 'https://old.reddit.com/r/{}',
+    'yt': 'https://www.youtube.com/results?search_query={}'
+}
