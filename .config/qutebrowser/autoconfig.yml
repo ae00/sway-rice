@@ -1,0 +1,7 @@
+settings:
+  url.searchengines:
+    global:
+      DEFAULT: https://duckduckgo.com/?q={}
+      o: https://chat.openai.com/?q={}
+      r: https://old.reddit.com/r/{}
+      yt: https://www.youtube.com/results?search_query={}
