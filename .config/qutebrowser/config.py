@@ -13,7 +13,7 @@ c.url.searchengines = {
     'DEFAULT': 'https://duckduckgo.com/?q={}',
     'o': 'https://chat.openai.com/?q={}',
     'r': 'https://old.reddit.com/r/{}',
-    'yt': 'https://www.youtube.com/results?search_query={}',
+    'yt': 'https://www.youtube.com/results?search_qury={}',
     'git': 'https://github.com/search?q={}'
 }
 
@@ -26,3 +26,6 @@ c.colors.tabs.selected.even.bg = black
 c.colors.tabs.selected.even.fg = red
 c.colors.tabs.selected.odd.bg = black
 c.colors.tabs.selected.odd.fg = red
+
+c.colors.statusbar.normal.bg = black
+c.colors.statusbar.normal.fg = grey
