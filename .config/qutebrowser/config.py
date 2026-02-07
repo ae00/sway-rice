@@ -17,29 +17,33 @@ c.url.searchengines = {
     'git': 'https://github.com/search?q={}'
 }
 
-c.colors.tabs.even.bg = black
-c.colors.tabs.even.fg = white
-c.colors.tabs.odd.bg = black
-c.colors.tabs.odd.fg = white
+c.colors.tabs.even.bg = 'black'
+c.colors.tabs.even.fg = 'white'
+c.colors.tabs.odd.bg = 'black'
+c.colors.tabs.odd.fg = 'white'
 
-c.colors.tabs.selected.even.bg = black
-c.colors.tabs.selected.even.fg = red
-c.colors.tabs.selected.odd.bg = black
-c.colors.tabs.selected.odd.fg = red
+c.colors.tabs.selected.even.bg = 'black'
+c.colors.tabs.selected.even.fg = 'red'
+c.colors.tabs.selected.odd.bg = 'black'
+c.colors.tabs.selected.odd.fg = 'red'
 
-c.colors.statusbar.normal.bg = black
-c.colors.statusbar.normal.fg = grey
-c.colors.statusbar.private.bg = black
-c.colors.statusbar.private.fg = grey
-c.colors.statusbar.insert.bg = black
-c.colors.statusbar.insert.fg = red
+c.colors.statusbar.normal.bg = 'black'
+c.colors.statusbar.normal.fg = 'grey'
+c.colors.statusbar.private.bg = 'black'
+c.colors.statusbar.private.fg = 'grey'
+c.colors.statusbar.insert.bg = 'black'
+c.colors.statusbar.insert.fg = 'red'
 
-c.colors.statusbar.url.fg = white
-c.colors.statusbar.url.hover.fg = red
+c.colors.statusbar.url.fg = 'white'
+c.colors.statusbar.url.hover.fg = 'red'
 
-c.colors.statusbar.url.success.http.fg = white
-c.colors.statusbar.url.success.https.fg = white
+c.colors.statusbar.url.success.http.fg = 'white'
+c.colors.statusbar.url.success.https.fg = 'white'
 
-c.colors.completion.item.selected.bg = red
-c.colors.completion.item.selected.border.bottom = red
-c.colors.completion.item.selected.border.top = red
+c.colors.completion.item.selected.bg = 'red'
+c.colors.completion.item.selected.border.bottom = 'red'
+c.colors.completion.item.selected.border.top = 'red'
+
+c.colors.completion.even.bg = 'black'
+c.colors.completion.odd.bg = "#1c1c1c"
+c.colors.completion.category.bg = 'black'
