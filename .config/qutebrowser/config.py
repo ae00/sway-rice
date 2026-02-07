@@ -33,3 +33,9 @@ c.colors.statusbar.private.bg = black
 c.colors.statusbar.private.fg = grey
 c.colors.statusbar.insert.bg = black
 c.colors.statusbar.insert.fg = red
+
+c.colors.statusbar.url.fg = white
+c.colors.statusbar.url.hover.fg = red
+
+c.colors.statusbar.url.success.http.fg = white
+c.colors.statusbar.url.success.https.fg = white
