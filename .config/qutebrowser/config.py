@@ -31,3 +31,5 @@ c.colors.statusbar.normal.bg = black
 c.colors.statusbar.normal.fg = grey
 c.colors.statusbar.private.bg = black
 c.colors.statusbar.private.fg = grey
+c.colors.statusbar.insert.bg = black
+c.colors.statusbar.insert.fg = red
