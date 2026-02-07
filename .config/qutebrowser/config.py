@@ -39,3 +39,7 @@ c.colors.statusbar.url.hover.fg = red
 
 c.colors.statusbar.url.success.http.fg = white
 c.colors.statusbar.url.success.https.fg = white
+
+c.colors.completion.item.selected.bg = red
+c.colors.completion.item.selected.border.bottom = red
+c.colors.completion.item.selected.border.top = red
