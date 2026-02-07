@@ -45,5 +45,5 @@ c.colors.completion.item.selected.border.bottom = 'red'
 c.colors.completion.item.selected.border.top = 'red'
 
 c.colors.completion.even.bg = 'black'
-c.colors.completion.odd.bg = "#1c1c1c"
+c.colors.completion.odd.bg = "#0f0f0f"
 c.colors.completion.category.bg = "#3a3a3a"
