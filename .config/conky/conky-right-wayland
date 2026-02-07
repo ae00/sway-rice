@@ -36,6 +36,7 @@ conky.config = {
 	font = 'sans:size=5',
 	pixelsize=5,
 	color1 = '#c13434',
+	color1 = '#b00526',
 	out_to_x = false,
 	out_to_wayland = true,
 	own_window_argb_visual=true,
@@ -43,13 +44,13 @@ conky.config = {
 };
 
 conky.text = [[
-${font sans:size=12}${color1}Time
-${font sans:size=14}${color ffffff}${time %H:%M:%S}
+${font sans:size=11}${color1}Time
+${color ffffff}${time %H:%M:%S}
 
-${font sans:size=12}${color1}Full date
+${color1}Full date
 ${color ffffff}${time %d.%m.%Y}
 
-${font sans:size=12}${color1}Week
+${color1}Week
 ${color ffffff}${time %V}
 
 ${color1}Day
@@ -61,7 +62,7 @@ ${color ffffff}${time %B}
 ${color1}Uptime
 ${color ffffff}${uptime}
 
-${font sans:size=12}${color1}CPU
+${color1}CPU
 ${color ffffff}${cpu cpu0}%
 ${color 333333}${cpubar 20 5}
 
