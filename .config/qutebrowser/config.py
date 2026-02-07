@@ -13,5 +13,6 @@ c.url.searchengines = {
     'DEFAULT': 'https://duckduckgo.com/?q={}',
     'o': 'https://chat.openai.com/?q={}',
     'r': 'https://old.reddit.com/r/{}',
-    'yt': 'https://www.youtube.com/results?search_query={}'
+    'yt': 'https://www.youtube.com/results?search_query={}',
+    'git': 'https://github.com/search?q={}'
 }
