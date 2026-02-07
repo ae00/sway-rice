@@ -16,3 +16,13 @@ c.url.searchengines = {
     'yt': 'https://www.youtube.com/results?search_query={}',
     'git': 'https://github.com/search?q={}'
 }
+
+c.colors.tabs.even.bg = black
+c.colors.tabs.even.fg = white
+c.colors.tabs.odd.bg = black
+c.colors.tabs.odd.fg = white
+
+c.colors.tabs.selected.even.bg = black
+c.colors.tabs.selected.even.fg = red
+c.colors.tabs.selected.odd.bg = black
+c.colors.tabs.selected.odd.fg = red
