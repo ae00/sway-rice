@@ -9,7 +9,7 @@ conky.config = {
 	draw_graph_borders = false,
 	draw_outline = false,
 	draw_shades = false,
-	gap_x = 10,
+	gap_x = 60,
 	gap_y = 25,
 	max_specials = '1024',
 	max_user_text = 10000,
@@ -33,7 +33,7 @@ conky.config = {
 	use_spacer = 'right',
 	use_xft = true,
 	xftalpha = 0.75,
-	font = 'sans:size=10',
+	font = 'sans:size=9',
 	out_to_x = false,
 	out_to_wayland= true,
 	own_window_argb_visual=true,
@@ -44,5 +44,8 @@ conky.config = {
 };
 
 conky.text = [[
-            ${color1}Sweclockers${color #ffffff} : ${rss https://www.sweclockers.com/feeds/nyheter 100 item_titles 1 }${color #919191} | ${color1}Aftonbladet${color #ffffff} : ${rss https://rss.aftonbladet.se/rss2/small/pages/sections/senastenytt/ 100 item_titles 1 }${color #919191}${color #919191} | ${color1}Arch updates ${color #ffffff} : ${execi 100 checkupdates | wc -l} packages ${color #919191}|${color1} Next holiday ${color #fff}: ${execi 100 python /home/master/.config/conky/holiday-2026.py}
+${color1}Sweclockers${color #ffffff} : ${rss https://www.sweclockers.com/feeds/nyheter 100 item_titles 1 }${color #919191} | \
+${color1}Aftonbladet${color #ffffff} : ${rss https://rss.aftonbladet.se/rss2/small/pages/sections/senastenytt/ 100 item_titles 1 }${color #919191}${color #919191} | \
+${color1}Arch updates ${color #ffffff} : ${execi 100 checkupdates | wc -l} packages ${color #919191}| \
+${color1} Next holiday ${color #ffffff}: ${execi 100 python /home/master/.config/conky/holiday-2026.py}
 ]];
