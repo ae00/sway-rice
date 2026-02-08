@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        aftonbladet custom css
-// @namespace   https://github.com/olmokramer
+// @namespace   https://github.com
 // @description Custom CSS for aftonbladet
 // @include     https://www.aftonbladet.se/*
 // @run-at      document-start
