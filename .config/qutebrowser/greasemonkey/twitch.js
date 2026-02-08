@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        twitch custom css
 // @namespace   https://github.com
-// @description Custom CSS for aftonbladet
+// @description Custom CSS
 // @include     https://www.twitch.tv/*
 // @run-at      document-start
 // @version     2
