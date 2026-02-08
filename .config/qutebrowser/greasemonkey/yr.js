@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        yr custom css
-// @namespace   https://github.com/olmokramer
+// @namespace   https://github.com
 // @description Custom CSS for yr
 // @include     https://www.yr.no/*
 // @run-at      document-start
