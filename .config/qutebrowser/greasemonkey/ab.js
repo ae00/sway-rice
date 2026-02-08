@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        aftonbladet custom css
 // @namespace   https://github.com
-// @description Custom CSS for aftonbladet
+// @description Custom CSS
 // @include     https://www.aftonbladet.se/*
 // @run-at      document-start
 // @version     2
