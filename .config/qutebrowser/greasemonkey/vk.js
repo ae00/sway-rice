@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        VK custom css
-// @namespace   https://github.com/olmokramer
+// @namespace   https://github.com
 // @description Custom CSS for VK
 // @include     https://www.vk.se/*
 // @run-at      document-start
