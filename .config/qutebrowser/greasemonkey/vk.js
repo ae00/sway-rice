@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        VK custom css
 // @namespace   https://github.com
-// @description Custom CSS for VK
+// @description Custom CSS
 // @include     https://www.vk.se/*
 // @run-at      document-start
 // @version     2
