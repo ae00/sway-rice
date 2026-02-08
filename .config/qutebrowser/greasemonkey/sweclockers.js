@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Sweclockers custom css
 // @namespace   https://github.com/
-// @description Custom CSS for Sweclockers
+// @description Custom CSS
 // @include     https://www.sweclockers.com/*
 // @run-at      document-start
 // @version     2
