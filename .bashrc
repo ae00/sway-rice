@@ -22,6 +22,7 @@ source ~/.cache/wal/colors-tty.sh
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
+alias mn='sudo mount -t cifs //nas/share /mnt -o username=master,uid=1000'
 alias c='clear'
 alias e='exit'
 alias feh='feh --scale-down --image-bg black'
