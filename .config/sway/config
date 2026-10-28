@@ -54,6 +54,14 @@ bindsym $mod+Return exec $term
 # Kill focused window
 bindsym $mod+Shift+q kill
 
+# Lock screen
+bindsym $mod+Shift+x exec swaylock -c 000000 -C /home/master/.config/swaylock/config
+
+exec swayidle -w \
+          timeout 600 'swaylock -f -c 000000 -C /home/master/.config/swaylock/config' \
+          timeout 700 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+          before-sleep 'swaylock -c 000000 -C /home/master/.config/swaylock/config'
+
 # Rofi launcher
 set $rofi_cfg /home/master/.cache/wal/colors-rofi-dark.rasi
 bindsym $mod+d exec --no-startup-id rofi -config $rofi_cfg -show run -disable-history -auto-select
