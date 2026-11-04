@@ -55,7 +55,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 
 # Lock screen
-bindsym $mod+Shift+x exec swaylock -c 000000 -C /home/master/.config/swaylock/config && swayidle -w timeout 10 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
+bindsym $mod+Shift+x exec swaylock -c 000000 -C /home/master/.config/swaylock/config
 
 exec swayidle -w \
           timeout 600 'swaylock -f -c 000000 -C /home/master/.config/swaylock/config' \
