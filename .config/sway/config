@@ -62,6 +62,9 @@ exec swayidle -w \
           timeout 700 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
           before-sleep 'swaylock -c 000000 -C /home/master/.config/swaylock/config'
 
+set $lock exec bash ~/.config/sway/lock
+bindsym $mod+Shift+x exec $lock
+
 # Rofi launcher
 set $rofi_cfg /home/master/.cache/wal/colors-rofi-dark.rasi
 bindsym $mod+d exec --no-startup-id rofi -config $rofi_cfg -show run -disable-history -auto-select
