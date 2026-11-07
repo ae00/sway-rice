@@ -59,7 +59,7 @@ bindsym $mod+Shift+q kill
 
 exec swayidle -w \
           timeout 600 'swaylock -f -c 000000 -C /home/master/.config/swaylock/config' \
-          timeout 700 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+          timeout 605 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
           before-sleep 'swaylock -c 000000 -C /home/master/.config/swaylock/config'
 
 set $lock exec bash ~/.config/sway/lock
