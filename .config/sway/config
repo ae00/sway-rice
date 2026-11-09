@@ -57,6 +57,9 @@ bindsym $mod+Shift+q kill
 # Lock screen
 # bindsym $mod+Shift+x exec swaylock -c 000000 -C /home/master/.config/swaylock/config
 
+for_window [class=".*"] inhibit_idle fullscreen
+for_window [app_id=".*"] inhibit_idle fullscreen
+
 exec swayidle -w \
           timeout 600 'swaylock -f -c 000000 -C /home/master/.config/swaylock/config' \
           timeout 605 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
