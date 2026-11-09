@@ -61,17 +61,23 @@ for_window [class=".*"] inhibit_idle fullscreen
 for_window [app_id=".*"] inhibit_idle fullscreen
 for_window [app_id="qutebrowser"] inhibit_idle focus
 
+# Lockscreen
+
+set $idle_lock 600
+set $idle_screen 610
+set $idle_cfg /home/master/.config/swaylock/config
+
 exec swayidle -w \
-          timeout 600 'swaylock -f -c 000000 -C /home/master/.config/swaylock/config' \
-          timeout 605 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-          before-sleep 'swaylock -c 000000 -C /home/master/.config/swaylock/config'
+          timeout $idle_lock 'swaylock -f -c 000000 -C $idle_cfg' \
+          timeout $idle_screen 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+          before-sleep 'swaylock -c 000000 -C $idle_cfg'
 
 bindsym $mod+Shift+b exec killall swayidle && exec notify-send "Lockscreen turned off"
 
 bindsym $mod+b exec notify-send "Lockscreen turned on" && exec swayidle -w \
-          timeout 600 'swaylock -f -c 000000 -C /home/master/.config/swaylock/config' \
-          timeout 610 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-          before-sleep 'swaylock -c 000000 -C /home/master/.config/swaylock/config'
+          timeout $idle_lock 'swaylock -f -c 000000 -C $idle_cfg' \
+          timeout $idle_screen 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+          before-sleep 'swaylock -c 000000 -C $idle_cfg'
 
 set $lock exec bash ~/.config/sway/lock
 bindsym $mod+Shift+x exec $lock
