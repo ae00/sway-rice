@@ -59,6 +59,7 @@ bindsym $mod+Shift+q kill
 
 for_window [class=".*"] inhibit_idle fullscreen
 for_window [app_id=".*"] inhibit_idle fullscreen
+for_window [app_id="qutebrowser"] inhibit_idle focus
 
 exec swayidle -w \
           timeout 600 'swaylock -f -c 000000 -C /home/master/.config/swaylock/config' \
