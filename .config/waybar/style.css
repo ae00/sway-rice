@@ -31,6 +31,9 @@ button:hover {
 	color:#ffffff;
 	border-bottom:1px solid red;
 }
+#custom-text {
+	color:grey;
+}
 #idle_inhibitor {
 	color:#bababa;
 	color:white;
