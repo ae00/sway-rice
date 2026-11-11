@@ -85,6 +85,7 @@ bindsym $mod+b exec notify-send "Lockscreen turned on" && exec swayidle -w \
 set $lock exec bash ~/.config/sway/lock
 bindsym $mod+Shift+x exec $lock
 
+# Toggle screen on/off
 bindsym --locked $mod+Shift+n exec swaymsg "output eDP-1 dpms toggle"
 
 # Rofi launcher
