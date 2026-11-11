@@ -82,6 +82,8 @@ bindsym $mod+b exec notify-send "Lockscreen turned on" && exec swayidle -w \
 set $lock exec bash ~/.config/sway/lock
 bindsym $mod+Shift+x exec $lock
 
+bindsym --locked $mod+Shift+n exec swaymsg "output eDP-1 dpms toggle"
+
 # Rofi launcher
 set $rofi_cfg /home/master/.cache/wal/colors-rofi-dark.rasi
 bindsym $mod+d exec --no-startup-id rofi -config $rofi_cfg -show run -disable-history -auto-select
