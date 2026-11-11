@@ -6,5 +6,20 @@
 	],
 	"modules-center": [
 		"sway/window"
-	]
+	],
+	"modules-right": [
+		"custom/text",
+		"idle_inhibitor"
+	],
+	"custom/text": {
+		"format": "Screensaver is :    "
+	},
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "Off",
+			"deactivated": "On"
+		},
+		"timeout": 30.5
+	}
 }
