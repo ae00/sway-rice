@@ -31,3 +31,9 @@ button:hover {
 	color:#ffffff;
 	border-bottom:1px solid red;
 }
+#idle_inhibitor {
+	color:#bababa;
+	color:white;
+	border-bottom:1px solid red;
+	margin-right:20px;
+}
