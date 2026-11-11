@@ -12,7 +12,7 @@
 		"idle_inhibitor"
 	],
 	"custom/text": {
-		"format": "Screensaver is :    "
+		"format": "Screensaver is   "
 	},
 	"idle_inhibitor": {
 		"format": "{icon}",
