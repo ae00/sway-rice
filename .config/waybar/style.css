@@ -32,11 +32,10 @@ button:hover {
 	border-bottom:1px solid red;
 }
 #custom-text {
-	color:#4f4f4f;
+	color:grey;
 }
-#idle_inhibitor {
-	color:#bababa;
-	color:white;
+#custom-lockscreen-status {
+	color:#ffffff;
 	border-bottom:1px solid red;
-	margin-right:20px;
+	margin-right:10px;
 }
