@@ -8,15 +8,5 @@
 		"sway/window"
 	],
 	"modules-right": [
-		"custom/text",
-		"custom/lockscreen-status"
-	],
-	"custom/text": {
-		"format": "Lockscreen is  "
-	},
-	"custom/lockscreen-status": {
-        	"format": "{content}",
-        	"exec": "cat /home/master/lockscreen-status.txt",
-        	"interval": 2
-    	}
+	]
 }
