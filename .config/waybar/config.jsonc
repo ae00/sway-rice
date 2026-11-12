@@ -9,17 +9,14 @@
 	],
 	"modules-right": [
 		"custom/text",
-		"idle_inhibitor"
+		"custom/lockscreen-status"
 	],
 	"custom/text": {
-		"format": "Lockscreen is   "
+		"format": "Lockscreen is  "
 	},
-	"idle_inhibitor": {
-		"format": "{icon}",
-		"format-icons": {
-			"activated": "Off",
-			"deactivated": "On"
-		},
-		"timeout": 30.5
-	}
+	"custom/lockscreen-status": {
+        	"format": "{content}",
+        	"exec": "cat /home/master/lockscreen-status.txt",
+        	"interval": 2
+    	}
 }
