@@ -70,13 +70,14 @@ set $idle_cfg /home/master/.config/swaylock/config
 exec swayidle -w \
           timeout $idle_lock 'swaylock -f -c 000000 -C $idle_cfg' \
           timeout $idle_screen 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-          before-sleep 'swaylock -c 000000 -C $idle_cfg'
+          before-sleep 'swaylock -c 000000 -C $idle_cfg' \
+          exec echo "on" > /home/master/lockscreen-status.txt
 
 # Turn off lockscreen countdown
-bindsym $mod+Shift+b exec killall swayidle && exec notify-send "Lockscreen turned off"
+bindsym $mod+Shift+b exec notify-send "Lockscreen turned off" && exec echo "off" > /home/master/lockscreen-status.txt && exec killall swayidle
 
 # Turn on lockscreen countdown
-bindsym $mod+b exec notify-send "Lockscreen turned on" && exec swayidle -w \
+bindsym $mod+b exec echo "on" > /home/master/lockscreen-status.txt && exec notify-send "Lockscreen turned on" && exec swayidle -w \
           timeout $idle_lock 'swaylock -f -c 000000 -C $idle_cfg' \
           timeout $idle_screen 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
           before-sleep 'swaylock -c 000000 -C $idle_cfg'
