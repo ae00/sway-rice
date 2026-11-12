@@ -31,11 +31,3 @@ button:hover {
 	color:#ffffff;
 	border-bottom:1px solid red;
 }
-#custom-text {
-	color:grey;
-}
-#custom-lockscreen-status {
-	color:#ffffff;
-	border-bottom:1px solid red;
-	margin-right:10px;
-}
