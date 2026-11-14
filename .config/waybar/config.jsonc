@@ -8,5 +8,16 @@
 		"sway/window"
 	],
 	"modules-right": [
-	]
+		"custom/statictext",
+		"custom/status"
+	],
+	"custom/statictext": {
+		"format": "Lockscreen is  ",
+		"interval": 0
+	},
+	"custom/status": {
+		"exec": "/home/master/.config/waybar/return.sh",
+		"format": "{}",
+		"interval": 1
+	}
 }
