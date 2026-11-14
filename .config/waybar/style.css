@@ -1,5 +1,5 @@
 * {
-	font-size:14px;
+	font-size:12px;
 }
 window#waybar {
 	background:#000000;
@@ -29,5 +29,11 @@ button:hover {
 #workspaces button.focused {
 	background:#000000;
 	color:#ffffff;
+	border-bottom:1px solid red;
+}
+#custom-statictext {
+	color:#4f4f4f;
+}
+#custom-status {
 	border-bottom:1px solid red;
 }
