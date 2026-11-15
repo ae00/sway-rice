@@ -8,6 +8,8 @@ input * {
     xkb_layout "se"
 }
 
+#for_window [class=".*"] opacity 0.95
+#for_window [title="qutebrowser"] opacity 1
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -31,6 +33,9 @@ gaps inner 30
 gaps outer 30
 gaps right 120
 
+#gaps top 50
+#gaps bottom 10
+
 # Borders
 hide_edge_borders smart
 default_border pixel 2
@@ -39,8 +44,9 @@ default_floating_border pixel 4
 # Client colors
 include "/home/master/.cache/wal/colors-sway"
 
+# class                 border  backgr. text    indicator child_border
 client.focused 		$color0 $color0 $color1 $color7 $color1
-client.focused_inactive #000000 $color1 $color0 #000000 #000000
+client.focused_inactive #000000 $color0 $color1 #000000 #000000
 client.urgent           #2f343a $color1  #ffffff $color1 $color1
 client.placeholder      $color1 #000000 #ffffff #000000 #0c0c0c
 client.unfocused	#000000 #000000 #ffffff #000000 #000000
@@ -50,16 +56,13 @@ client.background       #ffffff
 ### Key bindings
 # Start a terminal
 bindsym $mod+Return exec $term
+bindsym mod5+Return exec $term
 
 # Kill focused window
 bindsym $mod+Shift+q kill
 
-# Lock screen
-# bindsym $mod+Shift+x exec swaylock -c 000000 -C /home/master/.config/swaylock/config
-
 for_window [class=".*"] inhibit_idle fullscreen
 for_window [app_id=".*"] inhibit_idle fullscreen
-for_window [app_id="qutebrowser"] inhibit_idle focus
 
 # Lockscreen
 
@@ -93,27 +96,43 @@ bindsym --locked $mod+Shift+n exec swaymsg "output eDP-1 dpms toggle"
 
 # Rofi launcher
 set $rofi_cfg /home/master/.cache/wal/colors-rofi-dark.rasi
+
 bindsym $mod+d exec --no-startup-id rofi -config $rofi_cfg -show run -disable-history -auto-select
+bindsym $mod+Shift+d exec --no-startup-id rofi -config $rofi_cfg -show drun -disable-history -auto-select
+
+#-run-shell-command 'alacritty --config-file /home/master/.config/alacritty/alacritty-wayland.toml -e {cmd}'
 bindsym $mod+u exec --no-startup-id rofi -config $rofi_cfg -show filebrowser -auto-select
 bindsym $mod+f exec --no-startup-id rofi -config $rofi_cfg -show window -auto-select
 bindsym $mod+c exec --no-startup-id rofi -config $rofi_cfg -show calc -disable-history
 
-# File explorer
-bindsym $mod+g exec --no-startup-id $term -o 'window.padding.x=0' -o 'window.padding.y=0' -e ranger
+	# File explorer
+	bindsym $mod+g exec --no-startup-id $term -o 'window.padding.x=0' -o 'window.padding.y=0' -e ranger
+
+#navigate workspaces next / previous
+bindsym Shift+Ctrl+Right workspace next
+bindsym Shift+Ctrl+Left workspace prev
+
+bindsym mod5+Right workspace next
+bindsym mod5+Left workspace prev
 
 # Floating windows
 for_window [app_id="org.pulseaudio.pavucontrol"] floating on
-for_window [class="KeePassXC"] floating on
+for_window [title="KeePassXC"] floating on
 for_window [app_id="flameshot"] floating on
 for_window [title="Steam Settings"] floating on
 for_window [title="Friends List"] resize set width 500 px , border none
 for_window [title="Steam"] border none
 
+#for_window [class="Spotify"] resize set width 500 px
+
 # Flameshot
 bindsym $mod+p exec flameshot gui
 
 # Move window to bottom right
+# old rice
 bindsym $mod+i floating toggle; resize set 546 307; move position 1166 748; sticky toggle
+# new rice
+#bindsym $mod+i floating toggle; resize set 546 307; move position 1366 800; sticky toggle
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -239,4 +258,5 @@ include /etc/sway/config.d/*
 exec --no-startup-id swaybg -i /home/master/.config/wallpaper/archlinux-red.png;
 exec --no-startup-id conky -c /home/master/.config/conky/conky-right-wayland;
 exec --no-startup-id conky -c /home/master/.config/conky/rss-wayland;
+
 exec --no-startup-id waybar -c /home/master/.config/waybar/config.jsonc;
