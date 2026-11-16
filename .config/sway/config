@@ -105,8 +105,8 @@ bindsym $mod+u exec --no-startup-id rofi -config $rofi_cfg -show filebrowser -au
 bindsym $mod+f exec --no-startup-id rofi -config $rofi_cfg -show window -auto-select
 bindsym $mod+c exec --no-startup-id rofi -config $rofi_cfg -show calc -disable-history
 
-	# File explorer
-	bindsym $mod+g exec --no-startup-id $term -o 'window.padding.x=0' -o 'window.padding.y=0' -e ranger
+# File explorer
+bindsym $mod+g exec --no-startup-id $term -o 'window.padding.x=0' -o 'window.padding.y=0' -e ranger
 
 #navigate workspaces next / previous
 bindsym Shift+Ctrl+Right workspace next
