@@ -75,7 +75,7 @@ set $swayidle_content   timeout $idle_bright 'brightnessctl set 20%' resume 'bri
 						timeout $idle_screen 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
           				before-sleep 'swaylock -c 000000 -C $idle_cfg'
 
-# Start lockscreen on launch
+# Start lockscreen countdown on launch
 exec swayidle -w $swayidle_content
 
 # Turn on lockscreen countdown
