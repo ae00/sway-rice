@@ -86,7 +86,7 @@ bindsym $mod+Shift+x exec killall swayidle && exec notify-send "Lockscreen turne
 
 # Start lockscreen
 set $lock exec bash ~/.config/sway/lock
-bindsym $mod+Shift+l exec $lock
+bindsym $mod+l exec $lock
 
 # Toggle screen on/off
 bindsym --locked $mod+Shift+n exec swaymsg "output eDP-1 dpms toggle"
