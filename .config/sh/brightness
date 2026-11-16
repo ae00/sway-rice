@@ -1,0 +1,6 @@
+brightness=$(brightnessctl get)
+if [[ "$brightness" -eq 400000 ]]; then
+  brightnessctl set 20%
+else
+  brightnessctl set 100%
+fi
