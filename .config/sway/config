@@ -70,22 +70,19 @@ set $idle_bright 300
 set $idle_lock 600
 set $idle_screen 610
 set $idle_cfg /home/master/.config/swaylock/config
+set $swayidle_content   timeout $idle_bright 'brightnessctl set 20%' resume 'brightnessctl set 100%' \
+						timeout $idle_lock 'swaylock -f -c 000000 -C $idle_cfg' \
+						timeout $idle_screen 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+          				before-sleep 'swaylock -c 000000 -C $idle_cfg'
 
-exec swayidle -w \
-	  timeout $idle_bright 'brightnessctl set 20%' resume 'brightnessctl set 100%' \
-          timeout $idle_lock 'swaylock -f -c 000000 -C $idle_cfg' \
-          timeout $idle_screen 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-          before-sleep 'swaylock -c 000000 -C $idle_cfg' \
+# Start lockscreen on launch
+exec swayidle -w $swayidle_content
+
+# Turn on lockscreen countdown
+bindsym $mod+x exec notify-send "Lockscreen turned on" && exec swayidle -w $swayidle_content
 
 # Turn off lockscreen countdown
 bindsym $mod+Shift+x exec killall swayidle && exec notify-send "Lockscreen turned off"
-
-# Turn on lockscreen countdown
-bindsym $mod+x exec notify-send "Lockscreen turned on" && exec swayidle -w \
-	  timeout $idle_bright 'brightnessctl set 20%' resume 'brightnessctl set 100%' \
-          timeout $idle_lock 'swaylock -f -c 000000 -C $idle_cfg' \
-          timeout $idle_screen 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-          before-sleep 'swaylock -c 000000 -C $idle_cfg'
 
 # Start lockscreen
 set $lock exec bash ~/.config/sway/lock
