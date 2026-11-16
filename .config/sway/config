@@ -94,6 +94,9 @@ bindsym $mod+Shift+l exec $lock
 # Toggle screen on/off
 bindsym --locked $mod+Shift+n exec swaymsg "output eDP-1 dpms toggle"
 
+# Toggle brightness
+bindsym $mod+n exec sh /home/master/.config/sh/brightness
+
 # Rofi launcher
 set $rofi_cfg /home/master/.cache/wal/colors-rofi-dark.rasi
 
