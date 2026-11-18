@@ -1,7 +1,7 @@
 output=$(pgrep swayidle)
 
 if [[ -z "$output" ]]; then
-    echo "off"
+    echo "deactivated"
 else
-    echo "on"
+    echo "activated"
 fi
